@@ -16,7 +16,6 @@ import jax.ad_checkpoint as adc
 from . import utils as jaxutils
 from . import functional as F
 from . import ninjax as nj
-from . import derivatives
 from . import utils
 from . import internal
 
@@ -26,16 +25,6 @@ i32 = jnp.int32
 sg = lambda x: jax.tree_util.tree_map(jax.lax.stop_gradient, x)
 cast = jaxutils.cast_to_compute
 castpd = jaxutils.cast_to_param
-
-def get_dact(name):
-  if callable(name):
-    return name
-  elif name == 'none':
-    return derivatives.identity
-  elif hasattr(derivatives, name):
-    return getattr(derivatives, name)
-  else:
-    raise NotImplementedError(name)
 
 
 def get_act(name):
