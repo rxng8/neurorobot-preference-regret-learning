@@ -298,6 +298,8 @@ python scripts/train.py --configs metaworld slampc_1m --agent slampc --expname s
 
 ## Citation
 
+If you use this code or elements of our neurobotic active inference framework in any form in your project(s), please cite the source paper below:
+
 ```bibtex
 @misc{Nguyen2026PreferenceRegret,
   title={Optimizing Neurorobot Policy under Limited Demonstration Data through Preference Regret},
